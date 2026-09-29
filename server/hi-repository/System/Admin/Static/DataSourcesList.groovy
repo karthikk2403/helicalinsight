@@ -191,6 +191,11 @@ driverListArray.each {
             String replacedValue = findDbName.replace(modifiedMiddlewareName.substring(0, 1).toUpperCase() + modifiedMiddlewareName.substring(1), "").trim();
             modelJson.name = replacedValue.substring(0, 1).toUpperCase() + replacedValue.substring(1)
 
+        } else if (findDbName.equals("Mongodb") || findDbName.equals("Helical Mongodb")) {
+            modelJson.categoryName = "No SQL & Big Data"
+            modelJson.categoryType = "nosql_bigdata"
+            modelJson.type = "global.jdbc"
+            modelJson.dataSourceProvider = "noSql"
         } else {
             modelJson.categoryName = "RDBMS"
             modelJson.categoryType = "rdbms"
